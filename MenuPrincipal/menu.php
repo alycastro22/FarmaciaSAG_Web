@@ -43,7 +43,15 @@
         <span class="material-icons-sharp">
             healing
             </span>
-            <h3>Gestion Productos</h3>
+            <h3>Productos</h3>
+
+    </a>
+
+    <a href="#">
+        <span class="material-icons-sharp">
+            shopping_cart
+            </span>
+            <h3>Detalle Compras</h3>
 
     </a>
 
@@ -51,7 +59,7 @@
         <span class="material-icons-sharp">
             local_shipping
             </span>
-            <h3>Gestion Entregas</h3>
+            <h3>Entregas</h3>
 
     </a>
     
