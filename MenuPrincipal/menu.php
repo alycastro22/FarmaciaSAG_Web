@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Principal</title>
+    <title>Usuarios</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/e1d55cc160.js" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
     <div class="logo">
         <center>
         <img src="./images/sag.png" alt="">
-        <h2 class="text-muted">Bienvenido Farmacia <span class="text-muted">SAG</span>   </h2>
+        <h2 class="text-muted">BIENVENIDOS FARMACIA <span class="text-muted">SAG</span>   </h2>
     </center>
     </div>
     <div class="close" id="close-btn">
@@ -43,34 +43,18 @@
         <span class="material-icons-sharp">
             healing
             </span>
-            <h3>Productos</h3>
+            <h3>Gestion Productos</h3>
 
     </a>
 
-    <a href="#">
-        <span class="material-icons-sharp">
-            shopping_cart
-            </span>
-            <h3>Detalle Compras</h3>
-
-    </a>
 
     <a href="#">
         <span class="material-icons-sharp">
             local_shipping
             </span>
-            <h3>Entregas</h3>
+            <h3>Gestion Entregas</h3>
 
     </a>
-
-    <a href="#">
-        <span class="material-icons-sharp">
-            local_shipping
-            </span>
-            <h3>Administración</h3>
-
-    </a>
-
     
     <a href="#">
         <span class="material-icons-sharp">
