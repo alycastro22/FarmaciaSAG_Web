@@ -86,12 +86,22 @@
 
     function login()
     {
+        var evento = "Inicio de Sesion";
         var Correo = document.getElementById('correo').value;
-        var Password = document.getElementById('contrasena').value;
+        var Password = document.getElementById('contrasena').value;                                        
 
-//        alert(Correo + " " + Password);
+        //FECHA                
+        const formatDate = (current_datetime)=>{
+          let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
+          return formatted_date;
+        }
 
-       $.post(
+        var fechaH = new Date();
+        var fechaAct = formatDate(fechaH);
+                
+        console.log(fechaAct);
+
+        $.post(
         "php/loginWS.php",
         {
             "Correo" : Correo,
@@ -101,10 +111,13 @@
         function(Data)
         {
           var login = JSON.parse(Data)
+
           if (login.Ok == 1)
-          {
+          {            
+                                                          
             location.href = "MenuPrincipal/menu.php";
             alert(login.Data);
+
           } else {
             Swal.fire({
             position: 'center',
@@ -114,12 +127,32 @@
             timer: 2000
             })
           }
-        }
-      );
-}
+        });
+        
+        $.post("php/insertarLog.php",
+          {
+            "Usuario" : Correo,
+            "Evento" : evento, 
+            "Fecha" : fechaAct
+          },
+
+          function(Data)
+          {
+            var notificacion = JSON.parse(Data);            
+
+            if (notificacion.Ok == 0) 
+            {
+              console.log("Registro incorrecto.");          
+            }else if (notificacion.Ok == 1){
+              console.log("Registro correcto.");
+            }
+          }
+        )       
+      }
 
 
-    function RegistrarUsuario(){
+    function RegistrarUsuario()
+    {
       var Correo = document.getElementById('correo1').value;
       var Password = document.getElementById('contrasena1').value;
       var Password1 = document.getElementById('contrasena2').value;
@@ -135,7 +168,7 @@
         'Correo': Correo,
          "Password": Password,
           },
-          function(Data) {
+          function(Data){
           var notificacion = JSON.parse(Data);
           if (notificacion.Ok == 0) {
             Swal.fire({
@@ -153,6 +186,6 @@
           }
         }
       );
-}
-}
+      }
+    }
 </script>

@@ -18,7 +18,7 @@ body{
 }
 #main-container{
     width: 325px;
-    margin: 87px auto 40px;
+    margin: 10px auto 40px;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -95,9 +95,11 @@ button:hover{
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
-@media (min-width: 944px){
+@media (min-width: 944px)
+{
     #main-container{
-        margin-top: 170px;
+        margin-top: 130px;
+        margin-left: 360px;        
         display: flex;
         width: 924px;
     }

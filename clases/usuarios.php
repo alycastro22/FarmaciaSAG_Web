@@ -36,16 +36,15 @@ class Usuarios{
       return $Res;
     }
 
-    public function Login($Conexion) {
-      //alert("si llega")
-
-      //aqui tira error
+    public function Login($Conexion) 
+    {           
         $resultado = mysqli_query($Conexion,"SELECT correo, contrasena FROM usuario WHERE correo = '$this->Correo'");
 
         $data = $resultado->fetch_assoc();
         $respuesta = new Respuesta();
 
-        if ($data == null) {
+        if ($data == null) 
+        {
           $respuesta->VoidMail("Debes rellenar todos los campos.");
           return $respuesta;
       } else if ($data['contrasena'] == $this->Password) {
@@ -55,18 +54,6 @@ class Usuarios{
           $respuesta->Error("Contrasena o usuario incorrecto");
           return $respuesta;
       }
-  }
-      /*  $data = mysqli_query($Conexion, $resultado);
-        $list = array();
-
-        while($row = mysqli_fetch_array($resultado))
-        {
-          $userAct = new usuarios();
-          $userACt -> ConstructorSobrecargado($row['Correo'],$row['Password']);
-
-          $list[] = $userAct;
-        }
-        return $list;
-    }*/
+  }      
 }
 ?>

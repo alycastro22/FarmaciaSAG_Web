@@ -46,10 +46,20 @@
 
     function Login()
     {
-
+        var evento = "Inicio de Sesion";
         var Correo = document.getElementById('correo').value;
         var Password = document.getElementById('contrasena').value;
 
+        //FECHA                
+        const formatDate = (current_datetime)=>{
+          let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
+          return formatted_date;
+        }
+
+        var fechaH = new Date();
+        var fechaAct = formatDate(fechaH);
+                
+        console.log(fechaAct);
 
         $.post(
         "php/loginADMWS.php",
@@ -76,6 +86,26 @@
           }
         }
       );
+
+      $.post("php/insertarLog.php",
+          {
+            "Usuario" : Correo,
+            "Evento" : evento, 
+            "Fecha" : fechaAct
+          },
+
+          function(Data)
+          {
+            var notificacion = JSON.parse(Data);            
+
+            if (notificacion.Ok == 0) 
+            {
+              console.log("Registro incorrecto.");          
+            }else if (notificacion.Ok == 1){
+              console.log("Registro correcto.");
+            }
+          }
+        ) 
     }
 
 

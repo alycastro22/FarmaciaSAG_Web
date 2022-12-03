@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PaginaPrincipal</title>
+    <title>Pagina Principal</title>
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +21,8 @@
            
         <div class="centrar">
             <div class="izquierda"><br><br>
-                <h4 class="subtitulo">COOPERAMOS A TU SALUD</h4>
-                <h1 class="titulo-principal">FARMACIA SAG</h1>
+                <h4 class="subtitulo">Cooperamos con tu salud</h4>
+                <h1 class="titulo-principal">Farmacia SAG</h1>
                 <br>
 
                 <p class="descripcion"><br>
@@ -33,15 +33,25 @@
                     a largo plazo con todos los grupos de interés.
                 </p>
                 <br> 
-                <button id="sedans-btn" onclick="php/pantallacadm.php" >Ingresar</button>
+                <input type="button" onclick="Iniciar()" value="Ingresar"/>
     <br><br>
             </div>
 
             <div class="derecha"> <br><br><br><br><br>
                 <img src="images/sag.png" width="210">
             </div>
-
+           
         </div>
+
     </header>
 </body>
 </html>
+
+<script type="text/javascript">
+
+    function Iniciar()
+    {
+        location.href = "php/pantallacadm.php";      
+    }
+
+</script>
