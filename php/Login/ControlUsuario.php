@@ -63,7 +63,7 @@ if(isset($_POST['signup'])){
             if($update_res){
                 $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
-                header('location: ../../MenuPrincipal/menu.html');
+                header('location: ../../MenuPrincipal/menu.php');
                 exit();
             }else{
                 $errors['otp-error'] = "Error al actualizar el código!";
@@ -88,7 +88,7 @@ if(isset($_POST['signup'])){
                 if($status == 'verified'){
                   $_SESSION['email'] = $email;
                   $_SESSION['password'] = $password;
-                    header('location: ../../MenuPrincipal/menu.html');
+                    header('location: ../../MenuPrincipal/menu.php');
                 }else{
                     $info = "Parece que aún no has verificado tu correo electrónico - $email";
                     $_SESSION['info'] = $info;
