@@ -32,6 +32,7 @@ class Entregas{
     public function ConstructorEstado($identrega, $estado){
         $this->identrega=$identrega;
         $this->estado=$estado;
+       
     }
 
     public function listarEntregas($Conexion){
@@ -49,15 +50,31 @@ class Entregas{
     }
 
     public function actualizarestado($Conexion){
+        
         $query = "UPDATE entrega SET estado='$this->estado' WHERE id_entrega='$this->identrega'";
         $respuesta = new Respuesta();
-        if(mysqli_query($Conexion,$query)){
-            $respuesta->correcto("Producto modificado exitosamente.");
-            return $respuesta;
-        } else {
-            $respuesta->Error("Problema al Modificar" . $Conexion->error);
-            return $respuesta;
+
+        if($this->estado==""){
+            $respuesta->Error("Ingrese Estado");
+
+        }else{
+            if(mysqli_query($Conexion,$query)){
+                if($this->estado=="Enviada"){
+                    $respuesta->correcto("Entrega Enviada exitosamente.");
+                    return $respuesta;  
+                }else{
+                    $respuesta->correcto("Entrega Cancelada exitosamente.");
+                return $respuesta;
+    
+                }
+                
+            } else {
+                $respuesta->Error("Problema al Modificar" . $Conexion->error);
+                return $respuesta;
+            }
+
         }
+        
     }
 
 

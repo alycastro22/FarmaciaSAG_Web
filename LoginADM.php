@@ -73,7 +73,7 @@
           var login = JSON.parse(Data)
           if (login.Ok == 1)
           {
-            location.href = "MenuPrincipal/menu.php";
+            location.href = "php/gestionentrega.php";
             alert(login.Data);
           } else {
             Swal.fire({

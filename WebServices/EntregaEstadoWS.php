@@ -1,9 +1,13 @@
 <?php
-if(isset($_POST)){
+if(isset($_GET)){
 	include("../php/conexion.php");
 	include("../clases/entregas.php");
 	$Entrega= new Entregas();
-    $Entrega->ConstructorEstado(@$_POST['identrega'],@$_POST['estado']);
+	$identrega = @$_GET['identrega'];
+	$estado = @$_GET['estado'];
+	
+    $Entrega->ConstructorEstado($identrega,$estado);
     echo json_encode($Entrega->actualizarestado($conexion));
+	header('location: ../php/gestionentrega.php');
 }
 ?>

@@ -45,9 +45,9 @@
         </div>
 
         <div class="sidebar">
-            <a href="../../MenuPrincipal/menu.php">
+            <a href="../../MenuPrincipal/menuADM.php">
                 <span class="material-icons-sharp">group</span>
-                    <h3>Gestión Usuario</h3>
+                    <h3>Gestión Admin</h3>
 
             </a>
 
@@ -59,7 +59,7 @@
 
             </a>
 
-            <a href="#">
+            <a href="../gestionentrega.php">
                 <span class="material-icons-sharp">
                     local_shipping
                     </span>
@@ -67,7 +67,7 @@
 
             </a>
             
-            <a href="../Login/CerrarSesion.php"">
+            <a href="../Login/CerrarSesion.php">
                 <span class="material-icons-sharp">
                     logout
                     </span>

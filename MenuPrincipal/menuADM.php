@@ -45,9 +45,35 @@
                 group
                 </span>
             </span>
-            <h3>Gestión Admins</h3>
+            <h3>Gestión Admin</h3>
 
     </a>
+    <a href="../php/Productos/Productos.php">
+                <span class="material-icons-sharp">
+                    healing
+                    </span>
+                    <h3> Gestion Productos</h3>
+
+            </a>
+
+
+            <a href="../php/gestionentrega.php">
+                <span class="material-icons-sharp">
+                    local_shipping
+                    </span>
+                    <h3> Gestion Entregas</h3>
+                    
+
+
+            </a>
+            
+            <a href="../php/Login/CerrarSesion.php">
+                <span class="material-icons-sharp">
+                    logout
+                    </span>
+                    <h3>Cerrar Sesión</h3>
+
+            </a>
     <br>
     <br>
     <br>
