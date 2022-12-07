@@ -13,7 +13,6 @@
     <title>Entregas</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/styleT.css">
     <script src='../js/jquery.min.js'></script>
     <script src="https://kit.fontawesome.com/e1d55cc160.js" crossorigin="anonymous"></script>
    
@@ -82,6 +81,13 @@
 
     <div class="formulario"> 
         <h1 class="titulo">Gestión de Entregas</h1>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <a href="reporteEntregas.php" class="btn btn-primary"> 
+                    <i class="fa-solid fa-circle-plus"> </i>Reporte PDF</a>
+            </div>
+        </div>
+        <br>
 
         <div class="superior"> 
                 <table class ='table'>
