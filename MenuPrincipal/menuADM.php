@@ -30,7 +30,7 @@
     <div class="logo">
         <center>
         <img src="./images/sag.png" alt="">
-        <h2 class="text-muted">BIENVENIDOS FARMACIA <span class="text-muted">SAG</span>   </h2>
+        <h2 class="text-muted">Bienvenido Farmacia <span class="text-muted">SAG</span>   </h2>
     </center>
     </div>
     <div class="close" id="close-btn">
@@ -74,47 +74,7 @@
                     <h3>Cerrar Sesión</h3>
 
             </a>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <a href="#">
-        <span class="material-icons-sharp">
-            logout
-            </span>
-            <h3>Cerrar Sesión</h3>
-    </a>
 
-   
-           
 <form action="insertaradmin.php" method="POST"> 
 </div>
     </aside>
