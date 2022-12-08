@@ -1,5 +1,5 @@
 <?php
-include("entregas.php");
+include("Respuesta.php");
 
 class detallef{
     public $id_detallefactura;
@@ -26,16 +26,16 @@ class detallef{
         
     }
     public function listarDetalleFactura($Conexion){
-        $query = "SELECT DF.id_detallefactura, F.numero, P.nombre, P.precio,P.isv, P.cantidad From detallefactura as DF
+        $query = "SELECT DF.id_detallefactura, F.numero, P.nombre, P.precio,DF.isv, DF.cantidad From detallefactura as DF
         Inner Join factura as F ON DF.id_factura=F.id_factura 
-        Inner JOIN productos as P on P.id_producto=DF.id_productos";
+        Inner JOIN producto as P on P.id_producto=DF.id_productos";
 
         $resultado = mysqli_query($Conexion, $query);
         $lista = array();
         while ($row = mysqli_fetch_array($resultado))
         {
-            $detallefactura = new DetalleFactura();
-            $detallefactura->ConstructorDetalleFactura($row['id_detallefactura'],$row['numero'],$row['nombre'],$row['precio'],$row['isv'],$row['cantidad']);
+            $detallefactura = new detallef();
+            $detallefactura->ConstructorSobrecargado($row['id_detallefactura'],$row['numero'],$row['nombre'],$row['precio'],$row['isv'],$row['cantidad']);
             $lista[]=$detallefactura;
         }
         return $lista;
