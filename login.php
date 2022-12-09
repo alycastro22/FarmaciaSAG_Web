@@ -115,7 +115,7 @@
           if (login.Ok == 1)
           {            
                                                           
-            location.href = "MenuPrincipal/menu.php";
+            location.href = "home.php";
             alert(login.Data);
 
           } else {
