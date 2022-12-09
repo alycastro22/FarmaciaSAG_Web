@@ -20,7 +20,7 @@
     <div class="logo">
         <center>
         <img src="./images/sag.png" alt="">
-        <h2 class="text-muted">BIENVENIDOS FARMACIA <span class="text-muted">SAG</span>   </h2>
+        <h2 class="text-muted">Bienvenido Farmacia <span class="text-muted">SAG</span>   </h2>
     </center>
     </div>
     <div class="close" id="close-btn">
@@ -39,7 +39,7 @@
 
     </a>
 
-    <a href="../php/Productos/Productos.php">
+    <a href="/farmaciaSAG_WEB/php/mostrarp.php">
         <span class="material-icons-sharp">
             healing
             </span>
