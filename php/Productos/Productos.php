@@ -2,7 +2,7 @@
     session_start();
     require '../../conexion.php';
 
-    $sqlProductos = "SELECT p.id_producto, p.nombre, p.precio, p.stock, p.fechavencimiento, 
+    $sqlProductos = "SELECT p.id_producto, p.nombre, p.precio, p.stock, p.fechavencimiento, p.estado,
     g.categoria AS categoria FROM producto AS p
     INNER JOIN categoria AS g ON p.id_categoria=g.id_categoria";
     $productos = $conexion->query($sqlProductos);
@@ -23,7 +23,7 @@
     <link href="assets/css/all.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
-    <link rel="stylesheet" href="../../MenuPrincipal/style.css">
+    <link rel="stylesheet" href="../../MenuPrincipal/styleProductos.css">
     <script src="https://kit.fontawesome.com/e1d55cc160.js" crossorigin="anonymous"></script>
 
 
@@ -37,6 +37,8 @@
                 <center>
                     <img src="../../MenuPrincipal/images/sag.png" alt="">
                     <h2 class="text-muted">BIENVENIDOS FARMACIA <span class="text-muted">SAG</span>   </h2>
+                    
+
                 </center>
             </div>
             <div class="close" id="close-btn">
@@ -45,7 +47,7 @@
         </div>
 
         <div class="sidebar">
-            <a href="../../MenuPrincipal/menuADM.php">
+            <a href="../Empleados/Empleados.php">
                 <span class="material-icons-sharp">group</span>
                     <h3>Gestión Admin</h3>
 
@@ -78,8 +80,9 @@
         </div>
     </aside>
 
-    <div class="container-fluid">
-        <h2 class="text-center">Gestion de Productos<h2>
+    <div class="formulario">
+        <div class="superior"> 
+        <h2 class="text-center">Gestion de Productos</h2>
 
         <hr>
 
@@ -102,6 +105,8 @@
             </div>
         </div>
 
+        <div class="text-center">
+
         <table class="table mt-3">
             <thead class="table-dark">
                 <tr>
@@ -113,6 +118,7 @@
                     <th>Fecha de vencimiento</th>
                     <th>Imagen</th>
                     <th>Accion</th>
+                    <th>Estado</th>
                 </tr>
             </thead>
             <tbody>
@@ -132,19 +138,27 @@
                             data-bs-target="#editaModal" data-bs-id="<?= $row_producto['id_producto']; ?>"><i 
                             class="fa-solid fa-pen-to-square"></i> Editar</a>
 
-                        <a href="#" class="btn btn-sm btn-danger" data-bs-toggle="modal" 
-                            data-bs-target="#eliminaModal" data-bs-id="<?= $row_producto['id_producto']; ?>"> <i class="fa-solid 
-                            fa-trash"></i> Eliminar</a>
-
                         </td>
+                        <td>
+                        <?php
+                            require '../../conexion.php';
+
+                            $sqlProductos = "SELECT * FROM producto";
+                            
+                            
+
+                            if($row_producto['estado']==1){
+                                echo '<p><a class="btn btn-sm btn-success" href="estado.php?id_producto='.$row_producto['id_producto'].'&estado=0">Habilitar</a></p>';
+                            }else{
+                                echo '<p><a class="btn btn-sm btn-danger" href="estado.php?id_producto='.$row_producto['id_producto'].'&estado=1">Inhabilitar</a></p>';
+                            }
+                            ?>
+                        </td> 
                     </tr>
                 <?php  } ?>
 
             </tbody>
         </table>
-
-
-
     </div>
 
     <?php
