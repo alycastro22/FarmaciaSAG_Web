@@ -61,8 +61,7 @@ $custRow = $query->fetch_assoc();
             <img src="images/sag.png" alt="" class="w-50 mx-auto d-block">
             </div>
             <div class="menu">
-                <a href="home.php" class="d-block text-light p-3 border-0"><i class="icon ion-md-today lead mr-2"></i>
-                    Productos</a>
+                <a href="home.php" class="d-block text-light p-3 border-0"><i class="icon ion-md-today lead mr-2"></i>Productos</a>
                     <a href="viewCart.php" class="d-block text-light p-3 border-0"> <i class="icon ion-md-book lead mr-2"></i> Detalle de compras </a>
                 <a href="viewCart.php" class="d-block text-light p-3 border-0"> <i class="icon ion-md-car lead mr-2"></i>Entregas </a>
                 <a href="viewCart.php" class="d-block text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2"></i>Cuenta </a>

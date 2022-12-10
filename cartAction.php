@@ -46,7 +46,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
 
             $cartItems = $cart->contents();
             foreach($cartItems as $item){
-                $sql .= "INSERT INTO detallefactura (id_factura, id_productos, precio, cantidad) VALUES ('".$orderID."', '".$item['id']."', '".$item['price']."', '".$cart->total_items()."');";
+                $sql .= "INSERT INTO detallefactura (id_factura, id_productos, precio, cantidad) VALUES ('".$orderID."', '".$item['id']."', '".$item['price']."', '".$item['qty']."');";
             }
 
             $insertOrderItems = $conexion->multi_query($sql);
