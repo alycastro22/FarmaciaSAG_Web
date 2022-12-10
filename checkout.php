@@ -13,6 +13,7 @@ $_SESSION['sessCustomerID'] = $_SESSION['idCliente'];
 $query = $conexion->query("SELECT * FROM usuarios WHERE id = ".$_SESSION['sessCustomerID']);
 $custRow = $query->fetch_assoc();
 ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
